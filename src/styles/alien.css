@@ -108,7 +108,7 @@
   color: var(--violet);
 }
 .alien-hero h1 {
-  font-size: clamp(76px, 11.5vw, 165px);
+  font-size: clamp(42px, 7.5vw, 106px);
   letter-spacing: -0.08em;
   line-height: 0.93;
   font-weight: 800;
@@ -414,7 +414,7 @@
     min-height: 710px;
   }
   .alien-hero h1 {
-    font-size: 12vw;
+    font-size: 7.7vw;
   }
   .alien-organism {
     width: 65vw;
@@ -454,7 +454,7 @@
     opacity: 0.7;
   }
   .alien-hero h1 {
-    font-size: clamp(48px, 12.8vw, 83px);
+    font-size: clamp(35px, 8vw, 52px);
     margin-bottom: 28px;
   }
   .alien-landscape img {

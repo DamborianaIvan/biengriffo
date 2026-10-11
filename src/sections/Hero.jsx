@@ -85,7 +85,7 @@ export default function Hero() {
       </motion.div>
       <div className="container alien-hero-content">
         <p className="alien-coordinate">
-          BIENGRIFFO · CULTIVO & CONEXIÓN <span aria-hidden="true">✳</span>
+          BIENGRIFFO · ASESORAMIENTO TÉCNICO <span aria-hidden="true">✳</span>
         </p>
         <motion.h1
           id="hero-title"
@@ -96,31 +96,33 @@ export default function Hero() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          Otra
+          Asesoramiento
           <br />
-          <span>frecuencia.</span>
+          en cultivo de
+          <br />
+          <span>cannabis.</span>
         </motion.h1>
         <div className="alien-hero-bottom">
           <div>
             <p>
-              Una mirada distinta a tu cultivo.
+              Contame sobre tu cultivo y qué necesitás consultar.
               <br />
-              Asesoramiento técnico. Conexión humana.
+              Evaluamos tu caso y el alcance del asesoramiento.
             </p>
             <div className="alien-actions">
               <a href="#contacto" className="button button--primary">
-                Hablemos de tu cultivo{" "}
+                Consultar por asesoramiento{" "}
                 <ArrowUpRight size={19} aria-hidden="true" />
               </a>
               <a href="#trabajos" className="text-link">
-                Entrar al archivo <ArrowDown size={18} aria-hidden="true" />
+                Ver trabajos <ArrowDown size={18} aria-hidden="true" />
               </a>
             </div>
           </div>
           <span className="alien-side-note">
-            MENTE ABIERTA.
+            CONSULTAS TÉCNICAS.
             <br />
-            PIES EN LA TIERRA.
+            ATENCIÓN PERSONALIZADA.
           </span>
         </div>
         <p className="alien-credit">

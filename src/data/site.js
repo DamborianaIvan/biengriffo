@@ -1,7 +1,7 @@
 // Client-editable content. Empty contact values never generate external links.
 export const site = {
   name: "Biengriffo",
-  description: "Asesoramiento técnico en cultivo",
+  description: "Asesoramiento técnico en cultivo de cannabis",
   whatsapp: "", // International digits only, e.g. country + area + number.
   instagram: "", // Full https://www.instagram.com/username/ URL.
   hero: {
@@ -20,7 +20,7 @@ export const site = {
 export const navigation = [
   { href: "#inicio", label: "Inicio" },
   { href: "#trabajos", label: "Archivo" },
-  { href: "#sobre-mi", label: "Quién anda acá" },
+  { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#servicios", label: "Asesoramiento" },
-  { href: "#contacto", label: "Charlemos" },
+  { href: "#contacto", label: "Contacto" },
 ];

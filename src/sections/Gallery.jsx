@@ -21,15 +21,15 @@ export default function Gallery() {
             eyebrow="Archivo visual"
             title={
               <>
-                Explorá otra
+                Cultivos e
                 <br />
-                perspectiva.
+                instalaciones.
               </>
             }
           />
           <p className="section-side-copy">
-            Este es el lugar de las fotos. Podés recorrerlas por tema o abrir la
-            que te dé curiosidad.
+            Recorré la galería por categoría y ampliá las imágenes para ver los
+            detalles.
           </p>
         </Reveal>
         <div className="gallery-toolbar">

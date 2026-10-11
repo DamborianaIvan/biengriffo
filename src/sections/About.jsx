@@ -34,28 +34,28 @@ export default function About() {
                 <small>Retrato del asesor pendiente</small>
               </div>
             )}
-            <span className="photo-marker">CONEXIÓN HUMANA</span>
+            <span className="photo-marker">SOBRE EL ASESOR</span>
           </div>
         </Reveal>
         <Reveal className="about-copy">
           <SectionHeading
-            eyebrow="Detrás de la señal"
+            eyebrow="Sobre mí"
             title={
               <>
-                Del otro lado
+                Conocé a
                 <br />
-                también hay alguien.
+                tu asesor.
               </>
             }
           />
           <p className="large-copy">
             {advisor.name
               ? `Soy ${advisor.name}.`
-              : "Acá Biengriffo. Un espacio para conversar sobre el cultivo de cannabis y tu proyecto."}
+              : "Biengriffo ofrece asesoramiento técnico sobre cultivo de cannabis."}
           </p>
           <p>
             {advisor.bio ||
-              "La idea es arrancar escuchándote: qué tenés en mente, qué querés consultar y cómo podemos encarar esa charla."}
+              "Cada consulta empieza por conocer tu situación y definir qué tipo de asesoramiento necesitás."}
           </p>
           {!advisor.bio && (
             <p className="editorial-note">
@@ -64,7 +64,7 @@ export default function About() {
             </p>
           )}
           <a href="#contacto" className="text-link">
-            ¿Me contás la tuya? <ArrowUpRight size={18} aria-hidden="true" />
+            Hacer una consulta <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </Reveal>
       </div>

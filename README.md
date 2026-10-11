@@ -81,7 +81,7 @@ Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculad
 
 Negro profundo, verde eléctrico y violeta. La portada integra la fotografía al fondo y una figura alienígena abstracta dibujada con SVG. No hay stickers, cintas, papel ni fotografías en marcos de recortes.
 
-- Portada «Otra frecuencia» con entrada tipográfica en Motion y figura reactiva al puntero: únicamente mouse, recorrido máximo de 24 × 18 px, sin estado React por frame.
+- Portada «Asesoramiento en cultivo de cannabis» con entrada tipográfica en Motion y figura reactiva al puntero: únicamente mouse, recorrido máximo de 24 × 18 px, sin estado React por frame.
 - La figura queda estática en pantallas táctiles y con movimiento reducido. No hay parpadeos, loops infinitos, scroll secuestrado ni cursor personalizado.
 - Archivo visual con contornos orgánicos, filtros y lightbox accesible. Imágenes de muestra y créditos siguen identificados.
 - Presentación, servicios, conversación y formulario comparten la nueva paleta; las funciones y datos pendientes no cambian.

@@ -13,9 +13,9 @@ export default function Footer() {
               <span>.</span>
             </a>
             <p>
-              Una mirada técnica.
+              Asesoramiento técnico
               <br />
-              Un acompañamiento cercano.
+              en cultivo de cannabis.
             </p>
           </div>
           <nav aria-label="Navegación del pie">
@@ -45,7 +45,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {site.name}.
           </span>
           <a href="#privacidad">Privacidad y contacto</a>
-          <span>Hecho para conectar.</span>
+          <span>Biengriffo · Asesoramiento</span>
         </div>
       </div>
     </footer>
