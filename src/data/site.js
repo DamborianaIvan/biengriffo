@@ -19,7 +19,7 @@ export const site = {
 
 export const navigation = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#trabajos", label: "El álbum" },
+  { href: "#trabajos", label: "Archivo" },
   { href: "#sobre-mi", label: "Quién anda acá" },
   { href: "#servicios", label: "Asesoramiento" },
   { href: "#contacto", label: "Charlemos" },

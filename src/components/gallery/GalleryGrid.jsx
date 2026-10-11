@@ -22,7 +22,7 @@ export default function GalleryGrid({ items, onOpen }) {
             onClick={() => onOpen(item.id)}
             aria-label={`Ampliar: ${item.title}${item.placeholder ? " (imagen de muestra)" : ""}`}
           >
-            <span className="gallery-paper">
+            <span className="gallery-surface">
               <span className="gallery-id">
                 ARCHIVO / {item.id}
                 <span>{item.category}</span>

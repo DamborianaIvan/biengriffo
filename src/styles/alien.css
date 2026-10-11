@@ -1,0 +1,525 @@
+/* Dirección alien/ácida: sin marcos de papel ni elementos de scrapbook. */
+.alien-site {
+  --acid: #c6ff36;
+  --violet: #be83ff;
+  background: #08090c;
+  color: #eef1ea;
+  color-scheme: dark;
+}
+.alien-site ::selection {
+  background: #be83ff;
+  color: #09090c;
+}
+.alien-site :focus-visible {
+  outline-color: var(--acid);
+}
+.alien-site .site-header {
+  background: #08090cf5;
+  border-bottom: 1px solid #c6ff3622;
+}
+.alien-site .wordmark {
+  font-style: italic;
+  letter-spacing: -2px;
+}
+.alien-site .wordmark span {
+  color: var(--acid);
+}
+.alien-site .navigation .nav-contact {
+  border-color: #c6ff3670;
+  color: var(--acid);
+}
+.alien-site .navigation .nav-contact:hover {
+  background: var(--acid);
+  color: #09090c;
+}
+.alien-hero {
+  position: relative;
+  overflow: clip;
+  isolation: isolate;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  background: #08090c;
+}
+.alien-landscape {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+.alien-landscape picture,
+.alien-landscape img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.alien-landscape img {
+  object-fit: cover;
+  object-position: 65% 50%;
+  filter: hue-rotate(32deg) saturate(0.85) contrast(1.25);
+  opacity: 0.5;
+}
+.alien-landscape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #08090ce8 0%, #08090c60 58%, #26063730),
+    linear-gradient(0deg, #08090c, transparent 45%, #08090c55);
+}
+.alien-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.25;
+  background-image:
+    linear-gradient(#bc83ff1c 1px, transparent 1px),
+    linear-gradient(90deg, #bc83ff1c 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+  pointer-events: none;
+}
+.alien-organism {
+  position: absolute;
+  right: -2%;
+  top: 3%;
+  width: min(53vw, 750px);
+  pointer-events: none;
+  z-index: -1;
+}
+.alien-organism svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 16px #bf79ff55);
+}
+.alien-hero-content {
+  padding-block: 65px 25px;
+}
+.alien-coordinate {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font: 10px/1.5 monospace;
+  letter-spacing: 0.15em;
+  color: #c7d4b8;
+  margin-bottom: 36px;
+}
+.alien-coordinate span {
+  font-size: 27px;
+  color: var(--violet);
+}
+.alien-hero h1 {
+  font-size: clamp(76px, 11.5vw, 165px);
+  letter-spacing: -0.08em;
+  line-height: 0.93;
+  font-weight: 800;
+  margin: 0 0 45px;
+  max-width: 100%;
+}
+.alien-hero h1 > span {
+  display: inline-block;
+  font-style: italic;
+  color: var(--acid);
+  transform: skewX(-7deg);
+  text-shadow: 3px 3px 0 #56317d;
+  padding-right: 0.12em;
+}
+.alien-hero-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+}
+.alien-hero-bottom p {
+  font-size: 16px;
+  color: #d1d6cc;
+}
+.alien-actions {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.alien-site .button--primary {
+  background: var(--acid);
+  color: #09090c;
+  border-radius: 4px 24px 4px 24px;
+}
+.alien-site .button--primary:hover {
+  background: #dcff85;
+}
+.alien-side-note {
+  font: 11px/1.8 monospace;
+  letter-spacing: 0.1em;
+  color: var(--violet);
+  text-align: right;
+}
+.alien-credit {
+  margin-top: 45px;
+  font-size: 9px;
+  color: #a8b19f;
+}
+.alien-site .section {
+  padding-block: 100px;
+}
+.alien-site h2 {
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.alien-site .section-heading .eyebrow {
+  color: var(--violet);
+  font: 11px/1.5 monospace;
+  letter-spacing: 0.14em;
+}
+.alien-site .gallery {
+  position: relative;
+  background: #08090c;
+  border-top: 1px solid #c6ff3620;
+}
+.alien-site .gallery h2 {
+  text-transform: uppercase;
+  font-size: clamp(34px, 4.5vw, 64px);
+}
+.alien-site .gallery-filters button {
+  border-radius: 0;
+  border-color: #be83ff45;
+}
+.alien-site .gallery-filters button[aria-pressed="true"] {
+  background: var(--acid);
+  color: #08090c;
+  border-color: var(--acid);
+}
+.alien-site .gallery-grid {
+  gap: 30px;
+  padding: 30px 0 0;
+}
+.alien-site .gallery-item:nth-child(n) {
+  margin: 0;
+}
+.alien-site .gallery-item:nth-child(3n + 2) {
+  margin-top: 80px;
+}
+.alien-site .gallery-item:nth-child(n) .gallery-surface {
+  background: transparent;
+  color: #eef1ea;
+  padding: 0;
+  transform: none;
+  box-shadow: none;
+  transition: none;
+}
+.alien-site .gallery-image {
+  border-radius: 45% 45% 5px 5px / 20% 20% 5px 5px;
+  border: 1px solid #be83ff55;
+  background: #101215;
+}
+.alien-site .gallery-item:nth-child(3n + 2) .gallery-image {
+  border-radius: 4px 90px 4px 4px;
+}
+.alien-site .gallery-item:nth-child(3n) .gallery-image {
+  border-radius: 80px 4px 4px 4px;
+}
+.alien-site .gallery-image img {
+  filter: hue-rotate(32deg) saturate(0.85);
+}
+.alien-site .gallery-caption strong {
+  font:
+    500 25px/1.2 Manrope,
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+.alien-site .gallery-caption small {
+  color: #aab7b0;
+}
+.alien-site .gallery-id {
+  color: var(--violet);
+  padding-bottom: 14px;
+  font: 10px/1.4 monospace;
+}
+.alien-site .gallery-open {
+  background: var(--acid);
+}
+.alien-site .gallery-grid--single .gallery-item {
+  margin: 0;
+}
+.alien-site .gallery-item:focus-visible .gallery-surface {
+  outline-color: var(--acid);
+}
+.alien-site .about {
+  background: #101017;
+  border-block: 1px solid #be83ff25;
+}
+.alien-site .about-grid {
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 95px;
+}
+.alien-site .about-visual {
+  padding: 0;
+}
+.alien-site .portrait-frame {
+  background: none;
+  padding: 0;
+  transform: none;
+  box-shadow: none;
+}
+.alien-site .portrait-frame::before {
+  content: none;
+}
+.alien-site .portrait-frame > img,
+.alien-site .portrait-placeholder {
+  border-radius: 48% 48% 12% 12%;
+  border: 1px solid #be83ff55;
+}
+.alien-site .portrait-placeholder {
+  background: radial-gradient(ellipse at 50% 30%, #30213e, #11121a 70%);
+}
+.alien-site .portrait-placeholder svg {
+  color: var(--violet);
+}
+.alien-site .portrait-placeholder > span {
+  color: var(--acid);
+}
+.alien-site .portrait-placeholder p {
+  font:
+    600 33px/1.15 Manrope,
+    sans-serif;
+  letter-spacing: -0.05em;
+}
+.alien-site .photo-marker {
+  position: static;
+  display: block;
+  margin-top: 20px;
+  color: var(--violet);
+  text-align: center;
+}
+.alien-site .about-copy {
+  background: none;
+  padding: 0;
+}
+.alien-site .services {
+  background: #08090c;
+  border: 0;
+}
+.alien-site .service-row summary {
+  grid-template-columns: 45px 1fr 52px;
+}
+.alien-site .service-row[open] {
+  background: #c6ff36;
+  border-radius: 2px 35px 2px 35px;
+}
+.alien-site .service-row[open] summary:focus-visible,
+.alien-site .service-panel a:focus-visible {
+  outline-color: #08090c;
+}
+.alien-site .service-cta h3 {
+  font:
+    600 26px/1.2 Manrope,
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+.conversation {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  padding-top: 75px;
+  margin-top: 35px;
+  border-top: 1px solid #be83ff40;
+}
+.conversation-intro .hand-note {
+  font: 11px/1.5 monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #be83ff;
+  margin-bottom: 20px;
+}
+.conversation-intro > p:last-child {
+  margin-top: 20px;
+  color: #aab7b0;
+  font-size: 14px;
+}
+.conversation-thread {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.chat-note {
+  border-left: 1px solid #be83ff;
+  padding: 14px 25px;
+  background: #15121d;
+  border-radius: 0 30px 30px 0;
+}
+.conversation-thread > :nth-child(2) {
+  margin-left: 45px;
+}
+.conversation-thread > :nth-child(2) .chat-note {
+  border-color: #c6ff36;
+  background: #12190e;
+}
+.chat-note small {
+  font: 10px/1.5 monospace;
+  color: #be83ff;
+}
+.chat-note h3 {
+  font-size: 18px;
+  margin-block: 9px;
+}
+.chat-note p {
+  font-size: 13px;
+  color: #aab7b0;
+}
+.alien-site .contact {
+  background: #171020;
+  border-top: 1px solid #be83ff40;
+}
+.alien-site .contact h2 em {
+  font: inherit;
+  font-style: italic;
+  color: var(--acid);
+}
+.alien-site .contact-form {
+  background: #0d0e12;
+  border-color: #be83ff45;
+  border-radius: 2px 30px 2px 30px;
+}
+.alien-site .field input,
+.alien-site .field select,
+.alien-site .field textarea {
+  background: #16131e;
+  border-color: #be83ff40;
+}
+.alien-site .field [aria-invalid="true"] {
+  border-color: #ffc2b2;
+}
+.alien-site .site-footer {
+  background: #08090c;
+  border-color: #c6ff3622;
+}
+.alien-site .lightbox {
+  background: #09090e;
+  border-color: #be83ff60;
+}
+@media (hover: hover) and (pointer: fine) {
+  .alien-site .gallery-item:hover .gallery-image {
+    border-color: #c6ff36;
+  }
+  .alien-site .gallery-item:hover .gallery-image img {
+    filter: hue-rotate(65deg) saturate(1.1);
+  }
+}
+@media (max-width: 899px) {
+  .alien-site .navigation {
+    background: #08090c;
+  }
+  .alien-hero {
+    min-height: 710px;
+  }
+  .alien-hero h1 {
+    font-size: 12vw;
+  }
+  .alien-organism {
+    width: 65vw;
+    right: -12%;
+    top: 12%;
+    opacity: 0.8;
+  }
+  .alien-side-note {
+    display: none;
+  }
+  .alien-site .about-grid {
+    gap: 45px;
+  }
+  .conversation {
+    gap: 30px;
+  }
+}
+@media (max-width: 650px) {
+  .alien-hero {
+    min-height: 710px;
+    align-items: flex-end;
+  }
+  .alien-hero-content {
+    padding-top: 42px;
+    padding-bottom: 25px;
+  }
+  .alien-coordinate {
+    font-size: 8px;
+    gap: 15px;
+    margin-bottom: 175px;
+  }
+  .alien-organism {
+    width: 350px;
+    max-width: 95vw;
+    right: -2%;
+    top: 10px;
+    opacity: 0.7;
+  }
+  .alien-hero h1 {
+    font-size: clamp(48px, 12.8vw, 83px);
+    margin-bottom: 28px;
+  }
+  .alien-landscape img {
+    object-position: 65% center;
+  }
+  .alien-hero-bottom p {
+    font-size: 14px;
+  }
+  .alien-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+  }
+  .alien-credit {
+    font-size: 8px;
+    margin-top: 30px;
+  }
+  .alien-site .section {
+    padding-block: 70px;
+  }
+  .alien-site .gallery-grid {
+    gap: 35px;
+    padding-inline: 0;
+  }
+  .alien-site .gallery-item:nth-child(n) {
+    margin: 0;
+  }
+  .alien-site .gallery h2 {
+    font-size: 34px;
+  }
+  .alien-site .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .alien-site .about-visual {
+    max-width: 320px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .alien-site .portrait-placeholder {
+    aspect-ratio: 1;
+  }
+  .alien-site .service-row summary {
+    grid-template-columns: 24px minmax(0, 1fr) 36px;
+    gap: 12px;
+  }
+  .alien-site .service-panel {
+    padding-left: 48px;
+  }
+  .conversation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    padding-top: 45px;
+  }
+  .conversation-thread > :nth-child(2) {
+    margin-left: 20px;
+  }
+  .chat-note {
+    padding: 17px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alien-site .gallery-item:hover .gallery-image img {
+    transform: none;
+    filter: hue-rotate(32deg) saturate(0.85);
+  }
+}

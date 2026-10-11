@@ -11,7 +11,7 @@ import Contact from "./sections/Contact";
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="bitacora">
+      <div className="alien-site">
         <a href="#contenido" className="skip-link">
           Saltar al contenido
         </a>

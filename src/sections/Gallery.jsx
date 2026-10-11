@@ -18,12 +18,12 @@ export default function Gallery() {
       <div className="container">
         <Reveal className="section-header-row">
           <SectionHeading
-            eyebrow="El álbum"
+            eyebrow="Archivo visual"
             title={
               <>
-                Un poco de acá,
+                Explorá otra
                 <br />
-                un poco de allá.
+                perspectiva.
               </>
             }
           />

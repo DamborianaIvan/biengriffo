@@ -9,9 +9,6 @@ export default function About() {
     <section id="sobre-mi" className="section about">
       <div className="container about-grid">
         <Reveal className="about-visual">
-          <span className="field-note" aria-hidden="true">
-            La persona detrás del nombre.
-          </span>
           <div className="portrait-frame">
             {advisor.photo ? (
               <img
@@ -28,7 +25,7 @@ export default function About() {
               <div className="portrait-placeholder">
                 <div className="portrait-lines" aria-hidden="true" />
                 <UserRound size={80} strokeWidth={0.7} aria-hidden="true" />
-                <span>ACÁ VA MI FOTO</span>
+                <span>IDENTIDAD / BIENGRIFFO</span>
                 <p>
                   Un espacio para
                   <br />
@@ -37,14 +34,12 @@ export default function About() {
                 <small>Retrato del asesor pendiente</small>
               </div>
             )}
-            <span className="photo-marker">
-              Una cara detrás de las charlas.
-            </span>
+            <span className="photo-marker">CONEXIÓN HUMANA</span>
           </div>
         </Reveal>
         <Reveal className="about-copy">
           <SectionHeading
-            eyebrow="Che, ¿y vos quién sos?"
+            eyebrow="Detrás de la señal"
             title={
               <>
                 Del otro lado
