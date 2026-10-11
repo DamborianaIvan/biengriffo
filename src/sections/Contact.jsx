@@ -93,20 +93,19 @@ export default function Contact() {
       <div className="container contact-grid">
         <Reveal className="contact-copy">
           <SectionHeading
-            number="05"
-            eyebrow="Contacto"
+            eyebrow="Te leo"
             title={
               <>
-                Todo empieza
+                Bueno,
                 <br />
-                con un <em>hola.</em>
+                <em>contame.</em>
               </>
             }
           />
           <p className="section-description">
-            ¿Tenés una consulta o un proyecto en mente?
+            No hace falta tener todo resuelto.
             <br />
-            Este es el lugar para empezar.
+            Arrancá por lo que querés preguntar.
           </p>
           <div className="contact-channels">
             <ContactChannel
@@ -135,7 +134,7 @@ export default function Contact() {
             aria-describedby="form-status"
           >
             <div className="form-heading">
-              <h3 id="form-heading">Contame un poco más</h3>
+              <h3 id="form-heading">Dejame unas líneas</h3>
               <Send size={21} aria-hidden="true" />
             </div>
             <p id="form-status" className="form-note">

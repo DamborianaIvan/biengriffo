@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Process from "./Process";
 import { services } from "../data/services";
 import ServiceRow from "../components/ui/ServiceRow";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -10,19 +11,18 @@ export default function Services() {
       <div className="container">
         <Reveal className="section-header-row">
           <SectionHeading
-            number="02"
-            eyebrow="Servicios"
+            eyebrow="Lo que podemos charlar"
             title={
               <>
-                Distintas preguntas.
+                ¿Por dónde
                 <br />
-                Una mirada personal.
+                viene la duda?
               </>
             }
           />
           <p className="section-side-copy">
-            Explorá los posibles enfoques de asesoramiento. El alcance de cada
-            propuesta se conversa antes de comenzar.
+            Abrí el tema que más se parezca a tu consulta. Después vemos juntos
+            qué necesitás y qué alcance tendría el acompañamiento.
           </p>
         </Reveal>
         {services.some((service) => !service.confirmed) && (
@@ -39,13 +39,14 @@ export default function Services() {
         <Reveal className="service-aside">
           <a href="#contacto" className="service-cta">
             <span className="eyebrow">El primer paso</span>
-            <h3>¿Tu consulta es diferente?</h3>
+            <h3>¿Lo tuyo no está en la lista?</h3>
             <p>Contame qué tenés en mente.</p>
             <span className="cta-circle">
               <ArrowUpRight size={27} aria-hidden="true" />
             </span>
           </a>
         </Reveal>
+        <Process />
       </div>
     </section>
   );

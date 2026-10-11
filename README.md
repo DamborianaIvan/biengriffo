@@ -26,7 +26,7 @@ npm run preview
 | Imágenes, títulos, categorías y proporciones de trabajos                        | `src/data/gallery.js`                             |
 | Fotografías locales                                                             | `public/images/`                                  |
 | Texto de portada y presentación                                                 | `src/sections/Hero.jsx`, `src/sections/About.jsx` |
-| Colores, tipografía y responsive                                                | `src/index.css`, bloque `@theme`                  |
+| Colores, tipografía y responsive                                                | `src/styles/bitacora.css` y `src/index.css`                  |
 | Title, descripción y Open Graph                                                 | `index.html`                                      |
 | Privacidad                                                                      | `src/sections/Contact.jsx`                        |
 
@@ -77,19 +77,20 @@ El cliente usa un tiempo límite de 15 segundos. Un fallo de conexión, timeout,
 
 Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculados a campos, controles de 44 px, menú con Escape y estado expandido. Lightbox con foco contenido por el diálogo nativo, Escape, flechas, cierre, contador, retorno de foco y bloqueo del scroll. Respeta `prefers-reduced-motion` tanto en Motion como en CSS. Las imágenes de galería usan carga diferida; la portada tiene prioridad alta.
 
-## Dirección editorial e interacciones
+## Estilo de bitácora informal
 
-La segunda versión visual combina una revista experimental con un cuaderno de campo:
+La página se organiza como un espacio personal para explorar: **tablón de bienvenida → álbum → presentación → temas de asesoramiento y conversación → contacto**. No hay una sucesión de bloques comerciales numerados.
 
-- Portada con título por líneas, entrada escalonada en Motion, foto de contorno orgánico, sello y anotación.
-- Franja diagonal estática y retrato presentado como una ficha con cinta.
-- Servicios como filas desplegables con `<details>` / `<summary>`, agrupadas por `name`. La primera está abierta al entrar; se activan por toque, clic, Enter o espacio. Los navegadores sin agrupación exclusiva permiten abrir varias filas.
-- Galería tipo collage: fichas inclinadas con proporciones distintas, filtros existentes y lightbox. Hover y foco resaltan la imagen; ningún contenido depende de pasar el mouse.
-- Pasos escalonados sobre una superficie de cuaderno y botones con contornos redondeados.
+- Portada con el nombre de la marca, fotografía pegada y notas enlazadas para elegir por dónde entrar.
+- Papel cálido, tinta verde oscura y acentos lima y durazno. Textos conversados, sin inventar experiencias ni trabajos.
+- Álbum primero, con filtros y lightbox existentes. Las imágenes provisionales siguen identificadas.
+- Presentación como una nota personal. Los pasos de contacto se muestran como una conversación ilustrativa, no como testimonios ni mensajes reales.
+- Servicios desplegables con `details` y `summary`, accesibles por clic, toque y teclado. En navegadores compatibles con `name` solo queda uno abierto.
+- Formulario y canales conservan sus validaciones y estados pendientes de configuración.
 
-No se añadieron dependencias. Motion conserva las animaciones de entrada y los cambios de filtros; CSS resuelve las inclinaciones, colores y estados. No hay scroll secuestrado, cursor personalizado ni animaciones infinitas. Con movimiento reducido se desactivan las entradas, el desplazamiento suave y las transiciones de las fichas.
+Los estilos propios están en `src/styles/bitacora.css`, cargados después de `src/index.css`, que conserva los controles compartidos. Se retiraron los estilos de la antigua portada y del proceso numerado. La navegación sigue usando los mismos IDs de ancla.
 
-La composición se adapta en 1100, 899 y 650 px. En móvil la galería pasa a una columna, los servicios mantienen la interacción por toque y las anotaciones decorativas se simplifican. Los datos y las integraciones pendientes siguen centralizados en los mismos archivos.
+No se añadieron dependencias. Motion anima las entradas y filtros; el resto son estados CSS. Se respeta movimiento reducido. A 650 px la portada se apila y las dos notas de acceso permanecen en columnas; el resto del contenido pasa a una columna. La revisión visual en navegador sigue pendiente por las capacidades del entorno.
 
 ## Antes de publicar la versión definitiva
 
@@ -101,4 +102,4 @@ La composición se adapta en 1100, 899 y 650 px. En móvil la galería pasa a un
 
 ## Verificación de esta entrega
 
-Rediseño: build de producción correcto y 7 pruebas del formulario aprobadas. Render de React comprobado con 5 servicios desplegables, uno abierto inicialmente, un H1 único, 27 anclas válidas y recursos locales presentes. Se revisó la estructura responsive en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.
+Rediseño: build de producción correcto y 7 pruebas del formulario aprobadas. Render de React comprobado con 5 servicios desplegables, uno abierto inicialmente, un H1 único, 28 anclas válidas y recursos locales presentes. Se revisó la estructura responsive en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.
