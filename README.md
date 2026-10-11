@@ -66,7 +66,7 @@ El cliente usa un tiempo límite de 15 segundos. Un fallo de conexión, timeout,
 ## Organización
 
 - `src/components/layout/`: navegación responsive, footer, WhatsApp.
-- `src/components/ui/`: Button, Reveal, SectionHeading y ServiceCard.
+- `src/components/ui/`: Button, Reveal, SectionHeading y ServiceRow.
 - `src/components/gallery/`: filtros, grid animado y lightbox con `<dialog>` nativo.
 - `src/sections/`: las siete secciones de la landing.
 - `src/data/`: configuración y contenido editable.
@@ -76,6 +76,20 @@ El cliente usa un tiempo límite de 15 segundos. Un fallo de conexión, timeout,
 ## Accesibilidad y comportamiento
 
 Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculados a campos, controles de 44 px, menú con Escape y estado expandido. Lightbox con foco contenido por el diálogo nativo, Escape, flechas, cierre, contador, retorno de foco y bloqueo del scroll. Respeta `prefers-reduced-motion` tanto en Motion como en CSS. Las imágenes de galería usan carga diferida; la portada tiene prioridad alta.
+
+## Dirección editorial e interacciones
+
+La segunda versión visual combina una revista experimental con un cuaderno de campo:
+
+- Portada con título por líneas, entrada escalonada en Motion, foto de contorno orgánico, sello y anotación.
+- Franja diagonal estática y retrato presentado como una ficha con cinta.
+- Servicios como filas desplegables con `<details>` / `<summary>`, agrupadas por `name`. La primera está abierta al entrar; se activan por toque, clic, Enter o espacio. Los navegadores sin agrupación exclusiva permiten abrir varias filas.
+- Galería tipo collage: fichas inclinadas con proporciones distintas, filtros existentes y lightbox. Hover y foco resaltan la imagen; ningún contenido depende de pasar el mouse.
+- Pasos escalonados sobre una superficie de cuaderno y botones con contornos redondeados.
+
+No se añadieron dependencias. Motion conserva las animaciones de entrada y los cambios de filtros; CSS resuelve las inclinaciones, colores y estados. No hay scroll secuestrado, cursor personalizado ni animaciones infinitas. Con movimiento reducido se desactivan las entradas, el desplazamiento suave y las transiciones de las fichas.
+
+La composición se adapta en 1100, 899 y 650 px. En móvil la galería pasa a una columna, los servicios mantienen la interacción por toque y las anotaciones decorativas se simplifican. Los datos y las integraciones pendientes siguen centralizados en los mismos archivos.
 
 ## Antes de publicar la versión definitiva
 
@@ -87,4 +101,4 @@ Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculad
 
 ## Verificación de esta entrega
 
-Build de producción y pruebas automatizadas ejecutados. Se revisó la estructura responsive y los destinos de enlaces en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.
+Rediseño: build de producción correcto y 7 pruebas del formulario aprobadas. Render de React comprobado con 5 servicios desplegables, uno abierto inicialmente, un H1 único, 27 anclas válidas y recursos locales presentes. Se revisó la estructura responsive en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.
