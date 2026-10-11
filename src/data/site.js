@@ -19,8 +19,8 @@ export const site = {
 
 export const navigation = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#trabajos", label: "Trabajos" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#trabajos", label: "El álbum" },
+  { href: "#sobre-mi", label: "Quién anda acá" },
+  { href: "#servicios", label: "Asesoramiento" },
+  { href: "#contacto", label: "Charlemos" },
 ];

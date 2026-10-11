@@ -1,48 +1,46 @@
-import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 const steps = [
   [
-    "01",
-    "Contacto inicial",
-    "Me contás qué necesitás y compartís el contexto de tu consulta.",
+    "Vos",
+    "Me contás qué te anda dando vueltas.",
+    "Una pregunta, una idea o el contexto de tu proyecto.",
   ],
   [
-    "02",
-    "Evaluación de la consulta",
-    "Conversamos para entender el alcance y evaluar cómo puedo acompañarte.",
+    "Lo charlamos",
+    "Vemos de qué se trata.",
+    "Evaluamos la consulta y si puedo acompañarte.",
   ],
   [
-    "03",
-    "Propuesta de asesoramiento",
-    "Acordamos la modalidad, los objetivos y las condiciones antes de comenzar.",
+    "Si encaja",
+    "Acordamos cómo seguir.",
+    "Definimos alcance, modalidad y condiciones antes de empezar.",
   ],
 ];
 export default function Process() {
   return (
-    <section className="section process" aria-labelledby="process-heading">
-      <div className="container">
-        <Reveal>
-          <SectionHeading
-            number="04"
-            eyebrow="Cómo trabajo"
-            title={<span id="process-heading">Simple desde el principio.</span>}
-          />
-        </Reveal>
-        <div className="process-grid">
-          {steps.map(([number, title, description], index) => (
-            <Reveal key={number} delay={index * 0.08}>
-              <article className="process-step">
-                <span className="step-number">
-                  {number}
-                  <span aria-hidden="true">↗</span>
-                </span>
+    <section className="conversation" aria-labelledby="process-heading">
+      <div className="conversation-intro">
+        <p className="hand-note">Sin ceremonia.</p>
+        <h2 id="process-heading">
+          ¿Y cómo
+          <br />
+          arrancamos?
+        </h2>
+        <p>Con una charla. Así de simple.</p>
+      </div>
+      <ol className="conversation-thread">
+        {steps.map(([who, title, description], index) => (
+          <li key={who}>
+            <Reveal delay={index * 0.06}>
+              <div className="chat-note">
+                <small>{who}</small>
                 <h3>{title}</h3>
                 <p>{description}</p>
-              </article>
+              </div>
             </Reveal>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

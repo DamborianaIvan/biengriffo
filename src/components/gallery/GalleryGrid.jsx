@@ -1,9 +1,13 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+
 export default function GalleryGrid({ items, onOpen }) {
   const reduced = useReducedMotion();
   return (
-    <motion.div layout={!reduced} className="gallery-grid">
+    <motion.div
+      layout={!reduced}
+      className={`gallery-grid ${items.length === 1 ? "gallery-grid--single" : ""}`}
+    >
       <AnimatePresence mode="popLayout">
         {items.map((item) => (
           <motion.button
@@ -11,35 +15,43 @@ export default function GalleryGrid({ items, onOpen }) {
             layout={!reduced}
             type="button"
             className={`gallery-item ${item.shape}`}
-            initial={reduced ? false : { opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: reduced ? 1 : 0.97 }}
-            transition={{ duration: reduced ? 0 : 0.25 }}
+            initial={reduced ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: reduced ? 0 : -12 }}
+            transition={{ duration: reduced ? 0 : 0.35 }}
             onClick={() => onOpen(item.id)}
             aria-label={`Ampliar: ${item.title}${item.placeholder ? " (imagen de muestra)" : ""}`}
           >
-            <img
-              src={item.src}
-              alt={item.alt}
-              width={item.width}
-              height={item.height}
-              loading="lazy"
-              decoding="async"
-            />
-            <span className="gallery-id">
-              {item.id} / {item.category}
-            </span>
-            {item.placeholder && (
-              <span className="placeholder-badge">Espacio de muestra</span>
-            )}
-            <span className="gallery-caption">
-              <span>
-                <small>
-                  {item.placeholder ? "Fotografía pendiente" : item.category}
-                </small>
-                <strong>{item.title}</strong>
+            <span className="gallery-paper">
+              <span className="gallery-id">
+                ARCHIVO / {item.id}
+                <span>{item.category}</span>
               </span>
-              <ArrowUpRight size={23} aria-hidden="true" />
+              <span className="gallery-image">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+                {item.placeholder && (
+                  <span className="placeholder-badge">Espacio de muestra</span>
+                )}
+                <span className="gallery-open" aria-hidden="true">
+                  <ArrowUpRight size={28} />
+                </span>
+              </span>
+              <span className="gallery-caption">
+                <span>
+                  <small>
+                    {item.placeholder ? "Fotografía pendiente" : item.category}
+                  </small>
+                  <strong>{item.title}</strong>
+                </span>
+                <ArrowUpRight size={23} aria-hidden="true" />
+              </span>
             </span>
           </motion.button>
         ))}

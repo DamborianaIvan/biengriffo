@@ -18,18 +18,18 @@ export default function Gallery() {
       <div className="container">
         <Reveal className="section-header-row">
           <SectionHeading
-            number="03"
-            eyebrow="Trabajos / Archivo visual"
+            eyebrow="El álbum"
             title={
               <>
-                El proceso también
+                Un poco de acá,
                 <br />
-                se cuenta en imágenes.
+                un poco de allá.
               </>
             }
           />
           <p className="section-side-copy">
-            Un espacio para compartir cultivos, instalaciones y seguimientos.
+            Este es el lugar de las fotos. Podés recorrerlas por tema o abrir la
+            que te dé curiosidad.
           </p>
         </Reveal>
         <div className="gallery-toolbar">

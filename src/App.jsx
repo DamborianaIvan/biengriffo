@@ -6,36 +6,26 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Services from "./sections/Services";
 import Gallery from "./sections/Gallery";
-import Process from "./sections/Process";
 import Contact from "./sections/Contact";
 
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <a href="#contenido" className="skip-link">
-        Saltar al contenido
-      </a>
-      <Navbar />
-      <main id="contenido" tabIndex={-1}>
-        <Hero />
-        <div className="manifesto-strip">
-          <div className="container">
-            <span>OBSERVAR.</span>
-            <span>ENTENDER.</span>
-            <span>
-              ACOMPAÑAR<span className="accent">.</span>
-            </span>
-            <span className="strip-caption">La perspectiva Biengriffo ↗</span>
-          </div>
-        </div>
-        <About />
-        <Services />
-        <Gallery />
-        <Process />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppButton />
+      <div className="bitacora">
+        <a href="#contenido" className="skip-link">
+          Saltar al contenido
+        </a>
+        <Navbar />
+        <main id="contenido" tabIndex={-1}>
+          <Hero />
+          <Gallery />
+          <About />
+          <Services />
+          <Contact />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </MotionConfig>
   );
 }
