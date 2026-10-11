@@ -8,7 +8,10 @@ export default function About() {
   return (
     <section id="sobre-mi" className="section about">
       <div className="container about-grid">
-        <Reveal>
+        <Reveal className="about-visual">
+          <span className="field-note" aria-hidden="true">
+            Primero: escucharnos.
+          </span>
           <div className="portrait-frame">
             {advisor.photo ? (
               <img

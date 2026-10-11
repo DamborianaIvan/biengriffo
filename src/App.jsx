@@ -20,12 +20,15 @@ export default function App() {
         <Hero />
         <div className="manifesto-strip">
           <div className="container">
-            <span>OBSERVAR.</span>
-            <span>ENTENDER.</span>
             <span>
-              ACOMPAÑAR<span className="accent">.</span>
+              Observar<span aria-hidden="true"> ↗</span>
             </span>
-            <span className="strip-caption">La perspectiva Biengriffo ↗</span>
+            <span>
+              Entender<span aria-hidden="true"> ✳</span>
+            </span>
+            <span>
+              Acompañar<span aria-hidden="true"> ↗</span>
+            </span>
           </div>
         </div>
         <About />

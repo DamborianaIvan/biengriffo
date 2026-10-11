@@ -22,14 +22,15 @@ export default function Gallery() {
             eyebrow="Trabajos / Archivo visual"
             title={
               <>
-                El proceso también
+                Un archivo vivo.
                 <br />
-                se cuenta en imágenes.
+                Cada imagen, una historia.
               </>
             }
           />
           <p className="section-side-copy">
-            Un espacio para compartir cultivos, instalaciones y seguimientos.
+            Cultivos, instalaciones y seguimientos. Elegí una categoría y abrí
+            una imagen para verla de cerca.
           </p>
         </Reveal>
         <div className="gallery-toolbar">
