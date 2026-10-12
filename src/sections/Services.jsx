@@ -11,12 +11,12 @@ export default function Services() {
       <div className="container">
         <Reveal className="section-header-row">
           <SectionHeading
-            eyebrow="Lo que podemos charlar"
+            eyebrow="Servicios"
             title={
               <>
-                ¿Por dónde
+                Asesoramiento
                 <br />
-                viene la duda?
+                según tu consulta.
               </>
             }
           />
@@ -39,8 +39,8 @@ export default function Services() {
         <Reveal className="service-aside">
           <a href="#contacto" className="service-cta">
             <span className="eyebrow">El primer paso</span>
-            <h3>¿Lo tuyo no está en la lista?</h3>
-            <p>Contame qué tenés en mente.</p>
+            <h3>¿Necesitás otro tipo de asesoramiento?</h3>
+            <p>Consultá por el alcance del servicio.</p>
             <span className="cta-circle">
               <ArrowUpRight size={27} aria-hidden="true" />
             </span>

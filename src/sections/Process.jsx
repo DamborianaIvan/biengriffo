@@ -2,8 +2,8 @@ import Reveal from "../components/ui/Reveal";
 const steps = [
   [
     "Vos",
-    "Me contás qué te anda dando vueltas.",
-    "Una pregunta, una idea o el contexto de tu proyecto.",
+    "Contame qué necesitás consultar.",
+    "Compartí el contexto de tu cultivo y el motivo de la consulta.",
   ],
   [
     "Lo charlamos",
@@ -20,13 +20,13 @@ export default function Process() {
   return (
     <section className="conversation" aria-labelledby="process-heading">
       <div className="conversation-intro">
-        <p className="hand-note">Sin ceremonia.</p>
+        <p className="hand-note">Cómo funciona</p>
         <h2 id="process-heading">
           ¿Y cómo
           <br />
           arrancamos?
         </h2>
-        <p>Con una charla. Así de simple.</p>
+        <p>Primero evaluamos tu consulta; después acordamos el servicio.</p>
       </div>
       <ol className="conversation-thread">
         {steps.map(([who, title, description], index) => (

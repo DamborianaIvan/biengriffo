@@ -1,102 +1,133 @@
-import { motion, useReducedMotion } from "motion/react";
-import { ArrowDownRight, ArrowUpRight, Asterisk } from "lucide-react";
+import {
+  motion,
+  useReducedMotion,
+  useMotionValue,
+  useSpring,
+} from "motion/react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { site } from "../data/site";
 
 export default function Hero() {
   const reduced = useReducedMotion();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const driftX = useSpring(x, { stiffness: 90, damping: 24 });
+  const driftY = useSpring(y, { stiffness: 90, damping: 24 });
+  const reset = () => {
+    x.set(0);
+    y.set(0);
+  };
+  const follow = (event) => {
+    if (reduced || event.pointerType !== "mouse") return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    x.set(((event.clientX - rect.left) / rect.width - 0.5) * 24);
+    y.set(((event.clientY - rect.top) / rect.height - 0.5) * 18);
+  };
   return (
-    <section id="inicio" className="welcome-board" aria-labelledby="hero-title">
-      <div className="container">
-        <div className="board-topline">
-          <span>Un rincón para hablar de cultivo.</span>
-          <span className="board-edition">Pasá, mirá, preguntá ↙</span>
-        </div>
+    <section
+      id="inicio"
+      className="alien-hero"
+      aria-labelledby="hero-title"
+      onPointerMove={follow}
+      onPointerLeave={reset}
+    >
+      <div className="alien-landscape">
+        <picture>
+          <source media="(max-width: 600px)" srcSet={site.hero.mobile} />
+          <img
+            src={site.hero.src}
+            alt={site.hero.alt}
+            width="1800"
+            height="1422"
+            fetchPriority="high"
+          />
+        </picture>
+      </div>
+      <div className="alien-mesh" aria-hidden="true" />
+      <motion.div
+        className="alien-organism"
+        aria-hidden="true"
+        style={{ x: reduced ? 0 : driftX, y: reduced ? 0 : driftY }}
+      >
+        <svg viewBox="0 0 600 600" fill="none">
+          <defs>
+            <radialGradient id="alien-glow">
+              <stop stopColor="#cbff34" stopOpacity=".25" />
+              <stop offset="1" stopColor="#be79ff" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <ellipse
+            cx="300"
+            cy="300"
+            rx="260"
+            ry="265"
+            fill="url(#alien-glow)"
+          />
+          {Array.from({ length: 9 }, (_, i) => (
+            <ellipse
+              key={i}
+              cx="300"
+              cy="300"
+              rx={225 - i * 9}
+              ry={100 + i * 17}
+              transform={`rotate(${i * 19} 300 300)`}
+              stroke={i % 3 === 0 ? "#bc83ff" : "#c6ff36"}
+              strokeOpacity={0.25 + i * 0.06}
+              strokeWidth="1"
+            />
+          ))}
+          <path
+            d="M203 249Q249 229 278 289Q229 310 203 249ZM397 249Q351 229 322 289Q371 310 397 249Z"
+            fill="#c6ff36"
+          />
+          <path d="M282 338Q300 350 318 338" stroke="#c6ff36" strokeWidth="3" />
+        </svg>
+      </motion.div>
+      <div className="container alien-hero-content">
+        <p className="alien-coordinate">
+          BIENGRIFFO · ASESORAMIENTO TÉCNICO <span aria-hidden="true">✳</span>
+        </p>
         <motion.h1
           id="hero-title"
-          initial={reduced ? false : { opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: reduced ? 0 : 0.65 }}
+          initial={reduced ? false : { opacity: 0, y: 35, skewX: -8 }}
+          animate={{ opacity: 1, y: 0, skewX: 0 }}
+          transition={{
+            duration: reduced ? 0 : 0.85,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         >
-          {site.name.toLowerCase()}
-          <span>.</span>
+          Asesoramiento
+          <br />
+          en cultivo de
+          <br />
+          <span>cannabis.</span>
         </motion.h1>
-        <div className="board-layout">
-          <div className="board-welcome">
-            <span className="hand-note">¡Qué bueno verte por acá!</span>
-            <h2>
-              ¿Qué te
-              <br />
-              trae hoy?
-            </h2>
+        <div className="alien-hero-bottom">
+          <div>
             <p>
-              Soy Biengriffo. Este es mi espacio de asesoramiento en cultivo.
-              Podés chusmear el álbum, conocer la propuesta o contarme qué tenés
-              en mente.
+              Contame sobre tu cultivo y qué necesitás consultar.
+              <br />
+              Evaluamos tu caso y el alcance del asesoramiento.
             </p>
-            <span className="board-doodle" aria-hidden="true">
-              <ArrowDownRight strokeWidth={1} size={70} />
-            </span>
+            <div className="alien-actions">
+              <a href="#contacto" className="button button--primary">
+                Consultar por asesoramiento{" "}
+                <ArrowUpRight size={19} aria-hidden="true" />
+              </a>
+              <a href="#trabajos" className="text-link">
+                Ver trabajos <ArrowDown size={18} aria-hidden="true" />
+              </a>
+            </div>
           </div>
-          <motion.figure
-            className="board-photo"
-            initial={reduced ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: reduced ? 0 : 0.65,
-              delay: reduced ? 0 : 0.15,
-            }}
-          >
-            <div className="photo-tape" aria-hidden="true" />
-            <picture>
-              <source media="(max-width: 600px)" srcSet={site.hero.mobile} />
-              <img
-                src={site.hero.src}
-                alt={site.hero.alt}
-                width="1800"
-                height="1422"
-                fetchPriority="high"
-              />
-            </picture>
-            <figcaption>
-              Una pausa para mirar de cerca.
-              <small>Foto ilustrativa · Jave Lr / Pexels</small>
-            </figcaption>
-            <span className="board-sticker" aria-hidden="true">
-              <Asterisk size={32} />
-              <span>sin vueltas</span>
-            </span>
-          </motion.figure>
-          <nav className="board-paths" aria-label="Elegí por dónde empezar">
-            <a href="#trabajos" className="path-note path-note--lime">
-              <small>Para los curiosos</small>
-              <strong>
-                Vine a<br />
-                chusmear.
-              </strong>
-              <span>
-                Ir al álbum <ArrowUpRight size={21} aria-hidden="true" />
-              </span>
-            </a>
-            <a href="#contacto" className="path-note path-note--peach">
-              <small>Vamos a charlar</small>
-              <strong>
-                Tengo
-                <br />
-                una duda.
-              </strong>
-              <span>
-                Hacer una consulta <ArrowUpRight size={21} aria-hidden="true" />
-              </span>
-            </a>
-            <a href="#sobre-mi" className="board-about-link">
-              ¿Quién anda por acá? <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
-          </nav>
+          <span className="alien-side-note">
+            CONSULTAS TÉCNICAS.
+            <br />
+            ATENCIÓN PERSONALIZADA.
+          </span>
         </div>
-        <div className="board-bottom">
-          <span>Asesoramiento técnico, charla cercana.</span>
-          <a href="#servicios">¿En qué te puedo acompañar? ↗</a>
-        </div>
+        <p className="alien-credit">
+          Fotografía ilustrativa · Jave Lr / Pexels
+        </p>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ npm run preview
 | Imágenes, títulos, categorías y proporciones de trabajos                        | `src/data/gallery.js`                             |
 | Fotografías locales                                                             | `public/images/`                                  |
 | Texto de portada y presentación                                                 | `src/sections/Hero.jsx`, `src/sections/About.jsx` |
-| Colores, tipografía y responsive                                                | `src/styles/bitacora.css` y `src/index.css`                  |
+| Colores, tipografía y responsive                                                | `src/styles/alien.css` y `src/index.css`                  |
 | Title, descripción y Open Graph                                                 | `index.html`                                      |
 | Privacidad                                                                      | `src/sections/Contact.jsx`                        |
 
@@ -77,20 +77,17 @@ El cliente usa un tiempo límite de 15 segundos. Un fallo de conexión, timeout,
 
 Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculados a campos, controles de 44 px, menú con Escape y estado expandido. Lightbox con foco contenido por el diálogo nativo, Escape, flechas, cierre, contador, retorno de foco y bloqueo del scroll. Respeta `prefers-reduced-motion` tanto en Motion como en CSS. Las imágenes de galería usan carga diferida; la portada tiene prioridad alta.
 
-## Estilo de bitácora informal
+## Dirección alien / ácida
 
-La página se organiza como un espacio personal para explorar: **tablón de bienvenida → álbum → presentación → temas de asesoramiento y conversación → contacto**. No hay una sucesión de bloques comerciales numerados.
+Negro profundo, verde eléctrico y violeta. La portada integra la fotografía al fondo y una figura alienígena abstracta dibujada con SVG. No hay stickers, cintas, papel ni fotografías en marcos de recortes.
 
-- Portada con el nombre de la marca, fotografía pegada y notas enlazadas para elegir por dónde entrar.
-- Papel cálido, tinta verde oscura y acentos lima y durazno. Textos conversados, sin inventar experiencias ni trabajos.
-- Álbum primero, con filtros y lightbox existentes. Las imágenes provisionales siguen identificadas.
-- Presentación como una nota personal. Los pasos de contacto se muestran como una conversación ilustrativa, no como testimonios ni mensajes reales.
-- Servicios desplegables con `details` y `summary`, accesibles por clic, toque y teclado. En navegadores compatibles con `name` solo queda uno abierto.
-- Formulario y canales conservan sus validaciones y estados pendientes de configuración.
+- Portada «Asesoramiento en cultivo de cannabis» con entrada tipográfica en Motion y figura reactiva al puntero: únicamente mouse, recorrido máximo de 24 × 18 px, sin estado React por frame.
+- La figura queda estática en pantallas táctiles y con movimiento reducido. No hay parpadeos, loops infinitos, scroll secuestrado ni cursor personalizado.
+- Archivo visual con contornos orgánicos, filtros y lightbox accesible. Imágenes de muestra y créditos siguen identificados.
+- Presentación, servicios, conversación y formulario comparten la nueva paleta; las funciones y datos pendientes no cambian.
+- `src/styles/alien.css` reemplaza la piel anterior. `src/index.css` mantiene los estilos base y controles compartidos.
 
-Los estilos propios están en `src/styles/bitacora.css`, cargados después de `src/index.css`, que conserva los controles compartidos. Se retiraron los estilos de la antigua portada y del proceso numerado. La navegación sigue usando los mismos IDs de ancla.
-
-No se añadieron dependencias. Motion anima las entradas y filtros; el resto son estados CSS. Se respeta movimiento reducido. A 650 px la portada se apila y las dos notas de acceso permanecen en columnas; el resto del contenido pasa a una columna. La revisión visual en navegador sigue pendiente por las capacidades del entorno.
+Sin dependencias nuevas. Se contemplan escritorio, tableta y móvil, con una composición de portada específica para pantallas pequeñas. La revisión visual en navegador sigue pendiente por las capacidades del entorno.
 
 ## Antes de publicar la versión definitiva
 
@@ -102,4 +99,4 @@ No se añadieron dependencias. Motion anima las entradas y filtros; el resto son
 
 ## Verificación de esta entrega
 
-Rediseño: build de producción correcto y 7 pruebas del formulario aprobadas. Render de React comprobado con 5 servicios desplegables, uno abierto inicialmente, un H1 único, 28 anclas válidas y recursos locales presentes. Se revisó la estructura responsive en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.
+Rediseño: build de producción correcto y 7 pruebas del formulario aprobadas. Render de React comprobado con 5 servicios desplegables, uno abierto inicialmente, un H1 único, anclas válidas y recursos locales presentes. Se revisó la estructura responsive en código. La revisión visual en navegador queda pendiente: el entorno de trabajo no dispone del controlador de navegador requerido para esa comprobación.

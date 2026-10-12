@@ -9,9 +9,6 @@ export default function About() {
     <section id="sobre-mi" className="section about">
       <div className="container about-grid">
         <Reveal className="about-visual">
-          <span className="field-note" aria-hidden="true">
-            La persona detrás del nombre.
-          </span>
           <div className="portrait-frame">
             {advisor.photo ? (
               <img
@@ -28,7 +25,7 @@ export default function About() {
               <div className="portrait-placeholder">
                 <div className="portrait-lines" aria-hidden="true" />
                 <UserRound size={80} strokeWidth={0.7} aria-hidden="true" />
-                <span>ACÁ VA MI FOTO</span>
+                <span>IDENTIDAD / BIENGRIFFO</span>
                 <p>
                   Un espacio para
                   <br />
@@ -37,30 +34,28 @@ export default function About() {
                 <small>Retrato del asesor pendiente</small>
               </div>
             )}
-            <span className="photo-marker">
-              Una cara detrás de las charlas.
-            </span>
+            <span className="photo-marker">SOBRE EL ASESOR</span>
           </div>
         </Reveal>
         <Reveal className="about-copy">
           <SectionHeading
-            eyebrow="Che, ¿y vos quién sos?"
+            eyebrow="Sobre mí"
             title={
               <>
-                Del otro lado
+                Conocé a
                 <br />
-                también hay alguien.
+                tu asesor.
               </>
             }
           />
           <p className="large-copy">
             {advisor.name
               ? `Soy ${advisor.name}.`
-              : "Acá Biengriffo. Un espacio para conversar sobre el cultivo de cannabis y tu proyecto."}
+              : "Biengriffo ofrece asesoramiento técnico sobre cultivo de cannabis."}
           </p>
           <p>
             {advisor.bio ||
-              "La idea es arrancar escuchándote: qué tenés en mente, qué querés consultar y cómo podemos encarar esa charla."}
+              "Cada consulta empieza por conocer tu situación y definir qué tipo de asesoramiento necesitás."}
           </p>
           {!advisor.bio && (
             <p className="editorial-note">
@@ -69,7 +64,7 @@ export default function About() {
             </p>
           )}
           <a href="#contacto" className="text-link">
-            ¿Me contás la tuya? <ArrowUpRight size={18} aria-hidden="true" />
+            Hacer una consulta <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </Reveal>
       </div>
