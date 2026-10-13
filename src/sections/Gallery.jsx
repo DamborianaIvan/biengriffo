@@ -21,9 +21,9 @@ export default function Gallery() {
             eyebrow="Archivo visual"
             title={
               <>
-                Cultivos e
+                Cultivos y
                 <br />
-                instalaciones.
+                seguimientos.
               </>
             }
           />

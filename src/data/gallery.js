@@ -1,7 +1,6 @@
 export const categories = [
   "Todos",
   "Cultivos",
-  "Instalaciones",
   "Seguimientos",
 ];
 
@@ -17,17 +16,6 @@ export const gallery = [
     width: 900,
     height: 1120,
     shape: "portrait",
-    placeholder: true,
-  },
-  {
-    id: "02",
-    category: "Instalaciones",
-    title: "El espacio de trabajo",
-    src: "/images/placeholder-instalaciones.svg",
-    alt: "Ilustración de una estructura. Espacio reservado para una fotografía de instalación.",
-    width: 1100,
-    height: 760,
-    shape: "landscape",
     placeholder: true,
   },
   {
