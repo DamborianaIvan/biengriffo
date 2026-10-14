@@ -121,6 +121,9 @@ export default function Contact() {
               subtitle="Conocé más de Biengriffo"
             />
           </div>
+          <p className="contact-background-credit">
+            Fondo ilustrativo · Jave Lr / Pexels. No representa un trabajo de Biengriffo.
+          </p>
           <p className="contact-footnote">
             Una primera conversación para conocernos y evaluar tu consulta.
           </p>
