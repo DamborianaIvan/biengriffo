@@ -32,133 +32,12 @@
   background: var(--acid);
   color: #09090c;
 }
-.alien-hero {
-  position: relative;
-  overflow: clip;
-  isolation: isolate;
-  min-height: 760px;
-  display: flex;
-  align-items: center;
-  background: #08090c;
-}
-.alien-landscape {
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-}
-.alien-landscape picture,
-.alien-landscape img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.alien-landscape img {
-  object-fit: cover;
-  object-position: 65% 50%;
-  filter: hue-rotate(32deg) saturate(0.85) contrast(1.25);
-  opacity: 0.5;
-}
-.alien-landscape::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #08090ce8 0%, #08090c60 58%, #26063730),
-    linear-gradient(0deg, #08090c, transparent 45%, #08090c55);
-}
-.alien-mesh {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  opacity: 0.25;
-  background-image:
-    linear-gradient(#bc83ff1c 1px, transparent 1px),
-    linear-gradient(90deg, #bc83ff1c 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: linear-gradient(90deg, transparent, #000);
-  pointer-events: none;
-}
-.alien-organism {
-  position: absolute;
-  right: -2%;
-  top: 3%;
-  width: min(53vw, 750px);
-  pointer-events: none;
-  z-index: -1;
-}
-.alien-organism svg {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 0 16px #bf79ff55);
-}
-.alien-hero-content {
-  padding-block: 65px 25px;
-}
-.alien-coordinate {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  font: 10px/1.5 monospace;
-  letter-spacing: 0.15em;
-  color: #c7d4b8;
-  margin-bottom: 36px;
-}
-.alien-coordinate span {
-  font-size: 27px;
-  color: var(--violet);
-}
-.alien-hero h1 {
-  font-size: clamp(42px, 7.5vw, 106px);
-  letter-spacing: -0.08em;
-  line-height: 0.93;
-  font-weight: 800;
-  margin: 0 0 45px;
-  max-width: 100%;
-}
-.alien-hero h1 > span {
-  display: inline-block;
-  font-style: italic;
-  color: var(--acid);
-  transform: skewX(-7deg);
-  text-shadow: 3px 3px 0 #56317d;
-  padding-right: 0.12em;
-}
-.alien-hero-bottom {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 35px;
-}
-.alien-hero-bottom p {
-  font-size: 16px;
-  color: #d1d6cc;
-}
-.alien-actions {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  margin-top: 26px;
-  flex-wrap: wrap;
-}
-.alien-site .button--primary {
+ .alien-site .button--primary {
   background: var(--acid);
   color: #09090c;
   border-radius: 4px 24px 4px 24px;
 }
-.alien-site .button--primary:hover {
-  background: #dcff85;
-}
-.alien-side-note {
-  font: 11px/1.8 monospace;
-  letter-spacing: 0.1em;
-  color: var(--violet);
-  text-align: right;
-}
-.alien-credit {
-  margin-top: 45px;
-  font-size: 9px;
-  color: #a8b19f;
-}
+.alien-site .button--primary:hover { background: #dcff85; }
 .alien-site .section {
   padding-block: 100px;
 }
@@ -410,21 +289,6 @@
   .alien-site .navigation {
     background: #08090c;
   }
-  .alien-hero {
-    min-height: 710px;
-  }
-  .alien-hero h1 {
-    font-size: 7.7vw;
-  }
-  .alien-organism {
-    width: 65vw;
-    right: -12%;
-    top: 12%;
-    opacity: 0.8;
-  }
-  .alien-side-note {
-    display: none;
-  }
   .alien-site .about-grid {
     gap: 45px;
   }
@@ -433,46 +297,6 @@
   }
 }
 @media (max-width: 650px) {
-  .alien-hero {
-    min-height: 710px;
-    align-items: flex-end;
-  }
-  .alien-hero-content {
-    padding-top: 42px;
-    padding-bottom: 25px;
-  }
-  .alien-coordinate {
-    font-size: 8px;
-    gap: 15px;
-    margin-bottom: 175px;
-  }
-  .alien-organism {
-    width: 350px;
-    max-width: 95vw;
-    right: -2%;
-    top: 10px;
-    opacity: 0.7;
-  }
-  .alien-hero h1 {
-    font-size: clamp(35px, 8vw, 52px);
-    margin-bottom: 28px;
-  }
-  .alien-landscape img {
-    object-position: 65% center;
-  }
-  .alien-hero-bottom p {
-    font-size: 14px;
-  }
-  .alien-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 25px;
-  }
-  .alien-credit {
-    font-size: 8px;
-    margin-top: 30px;
-  }
   .alien-site .section {
     padding-block: 70px;
   }

@@ -75,19 +75,18 @@ El cliente usa un tiempo límite de 15 segundos. Un fallo de conexión, timeout,
 
 ## Accesibilidad y comportamiento
 
-Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculados a campos, controles de 44 px, menú con Escape y estado expandido. Lightbox con foco contenido por el diálogo nativo, Escape, flechas, cierre, contador, retorno de foco y bloqueo del scroll. Respeta `prefers-reduced-motion` tanto en Motion como en CSS. Las imágenes de galería usan carga diferida; la portada tiene prioridad alta.
+Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculados a campos, controles de 44 px, menú con Escape y estado expandido. Lightbox con foco contenido por el diálogo nativo, Escape, flechas, cierre, contador, retorno de foco y bloqueo del scroll. Respeta `prefers-reduced-motion` en los componentes React Bits y en CSS. Las imágenes de galería usan carga diferida.
 
 ## Dirección alien / ácida
 
-Negro profundo, verde eléctrico y violeta. La portada integra la fotografía al fondo y una figura alienígena abstracta dibujada con SVG. No hay stickers, cintas, papel ni fotografías en marcos de recortes.
+Negro profundo, verde eléctrico y violeta. Hero tipográfico sin fotografía: «CULTIVO» ocupa la portada, acompañado de una aurora animada y una única llamada a consultar. Los textos describen el servicio sin promesas ni credenciales inventadas.
 
-- Portada «Asesoramiento en cultivo de cannabis» con entrada tipográfica en Motion y figura reactiva al puntero: únicamente mouse, recorrido máximo de 24 × 18 px, sin estado React por frame.
-- La figura queda estática en pantallas táctiles y con movimiento reducido. No hay parpadeos, loops infinitos, scroll secuestrado ni cursor personalizado.
-- Archivo visual con contornos orgánicos, filtros y lightbox accesible. Imágenes de muestra y créditos siguen identificados.
-- Presentación, servicios, conversación y formulario comparten la nueva paleta; las funciones y datos pendientes no cambian.
-- `src/styles/alien.css` reemplaza la piel anterior. `src/index.css` mantiene los estilos base y controles compartidos.
-
-Sin dependencias nuevas. Se contemplan escritorio, tableta y móvil, con una composición de portada específica para pantallas pequeñas. La revisión visual en navegador sigue pendiente por las capacidades del entorno.
+- React Bits: `Aurora` (fondo WebGL), `DecryptedText` (entrada del título) y `FadeContent` (secciones, galería y lightbox).
+- Componentes instalados como código local en `src/components/reactbits/`, con licencia y notas de origen. `motion` permanece como dependencia de DecryptedText; FadeContent utiliza GSAP.
+- El fondo se puede pausar; Aurora deja de dibujar fuera de pantalla y en pestañas ocultas. Resolución limitada a DPR 1 para controlar el costo en móviles.
+- `prefers-reduced-motion` evita montar los efectos y muestra contenido estático. El fondo tiene un degradado de respaldo para dispositivos sin WebGL2.
+- Filtros, lightbox, navegación y formulario conservan sus acciones. Las imágenes de muestra siguen identificadas.
+- Aurora se carga en un chunk separado; las dependencias de animación y React también se separan para evitar un único bundle grande.
 
 ## Antes de publicar la versión definitiva
 

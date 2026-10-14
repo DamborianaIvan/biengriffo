@@ -4,11 +4,6 @@ export const site = {
   description: "Asesoramiento técnico en cultivo de cannabis",
   whatsapp: "", // International digits only, e.g. country + area + number.
   instagram: "", // Full https://www.instagram.com/username/ URL.
-  hero: {
-    src: "/images/hero.webp",
-    mobile: "/images/hero-mobile.webp",
-    alt: "Detalle de una planta de cannabis; fotografía ilustrativa, no corresponde a un trabajo de Biengriffo.",
-  },
   advisor: {
     name: "",
     bio: "", // Confirmed personal presentation; do not add unverified credentials.

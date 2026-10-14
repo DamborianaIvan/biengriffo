@@ -1,4 +1,3 @@
-import { MotionConfig } from "motion/react";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/layout/WhatsAppButton";
@@ -10,22 +9,20 @@ import Contact from "./sections/Contact";
 
 export default function App() {
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="alien-site">
-        <a href="#contenido" className="skip-link">
-          Saltar al contenido
-        </a>
-        <Navbar />
-        <main id="contenido" tabIndex={-1}>
-          <Hero />
-          <Gallery />
-          <About />
-          <Services />
-          <Contact />
-        </main>
-        <Footer />
-        <WhatsAppButton />
-      </div>
-    </MotionConfig>
+    <div className="alien-site">
+      <a href="#contenido" className="skip-link">
+        Saltar al contenido
+      </a>
+      <Navbar />
+      <main id="contenido" tabIndex={-1}>
+        <Hero />
+        <Gallery />
+        <About />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </div>
   );
 }
