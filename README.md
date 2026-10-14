@@ -79,14 +79,14 @@ Anclas, enlace de salto, foco visible, formularios etiquetados, errores vinculad
 
 ## Dirección alien / ácida
 
-Negro profundo, verde eléctrico y violeta. Hero tipográfico sin fotografía: «CULTIVO» ocupa la portada, acompañado de una aurora animada y una única llamada a consultar. Los textos describen el servicio sin promesas ni credenciales inventadas.
+Negro profundo, verde eléctrico y violeta. Hero tipográfico sin fotografía: «CULTIVO» ocupa la portada, acompañado de líneas verdes y violetas reactivas al mouse y una única llamada a consultar. Los textos describen el servicio sin promesas ni credenciales inventadas.
 
-- React Bits: `Aurora` (fondo WebGL), `DecryptedText` (entrada del título) y `FadeContent` (secciones, galería y lightbox).
-- Componentes instalados como código local en `src/components/reactbits/`, con licencia y notas de origen. `motion` permanece como dependencia de DecryptedText; FadeContent utiliza GSAP.
-- El fondo se puede pausar; Aurora deja de dibujar fuera de pantalla y en pestañas ocultas. Resolución limitada a DPR 1 para controlar el costo en móviles.
+- React Bits: `Threads` (fondo WebGL) y `FadeContent` (secciones, galería y lightbox).
+- Componentes instalados como código local en `src/components/reactbits/`, con licencia y notas de origen. FadeContent utiliza GSAP. El título permanece estable, sin descifrado de caracteres.
+- El fondo se puede pausar; Threads deja de dibujar fuera de pantalla y en pestañas ocultas. El componente limita la resolución máxima a 1920 px y utiliza 65 líneas. En dispositivos táctiles el fondo se mueve de forma autónoma, sin interacción con el puntero.
 - `prefers-reduced-motion` evita montar los efectos y muestra contenido estático. El fondo tiene un degradado de respaldo para dispositivos sin WebGL2.
 - Filtros, lightbox, navegación y formulario conservan sus acciones. Las imágenes de muestra siguen identificadas.
-- Aurora se carga en un chunk separado; las dependencias de animación y React también se separan para evitar un único bundle grande.
+- Threads se carga en un chunk separado; las dependencias de animación y React también se separan para evitar un único bundle grande.
 
 ## Antes de publicar la versión definitiva
 

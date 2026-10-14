@@ -1,11 +1,9 @@
 import { lazy, Suspense, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
-import DecryptedText from '../components/reactbits/DecryptedText';
-import Reveal from '../components/ui/Reveal';
 import useReducedMotion from '../hooks/useReducedMotion';
 import '../styles/hero.css';
 
-const Aurora = lazy(() => import('../components/reactbits/Aurora'));
+const Threads = lazy(() => import('../components/reactbits/Threads'));
 
 export default function Hero() {
   const reduced = useReducedMotion();
@@ -14,8 +12,10 @@ export default function Hero() {
     <section id="inicio" className="signal-hero" aria-labelledby="hero-title">
       <div className="signal-atmosphere" aria-hidden="true">
         {!reduced && <Suspense fallback={null}>
-          <Aurora colorStops={['#be83ff', '#c6ff36', '#6530cc']} amplitude={1.2}
-            paused={paused} height={0.62} blend={0.65} layers={2} speed={0.6} dpr={1} />
+          <Threads color="#c6ff36" accentColor="#be83ff" amplitude={1.8}
+            distance={0.35} lineCount={65} thickness={0.65} softness={0.8}
+            angle={-18} speed={0.45} parting={0.45} fade={0.25}
+            opacity={0.8} enableMouseInteraction paused={paused} />
         </Suspense>}
       </div>
       <div className="container signal-content">
@@ -27,22 +27,19 @@ export default function Hero() {
             {paused ? 'REANUDAR EFECTO' : 'PAUSAR EFECTO'}
           </button>}
         </div>
-        <Reveal className="signal-heading">
-          <h1 id="hero-title" aria-label="Asesoramiento en cultivo de cannabis">
+        <div className="signal-heading">
+          <h1 id="hero-title">
             <span className="signal-pretitle">Asesoramiento en</span>
-            <span className="signal-word" aria-label="cultivo">
-              {reduced ? 'CULTIVO' : <DecryptedText text="CULTIVO" animateOn="view" speed={65}
-                maxIterations={12} characters="CULTIVO/+#" aria-hidden="true" />}
-            </span>
-            <span className="signal-subtitle">de cannabis<span aria-hidden="true">↗</span></span>
+            <span className="signal-word">CULTIVO</span>
+            <span className="signal-subtitle">de cannabis<span aria-hidden="true">✳</span></span>
           </h1>
-        </Reveal>
+        </div>
         <div className="signal-bottom">
           <p>Contame sobre tu cultivo y qué necesitás consultar.
             Evaluamos tu caso y el alcance del asesoramiento.</p>
           <a href="#contacto" className="signal-consult">
-            <span>Hablemos de<br /><strong>tu cultivo.</strong></span>
-            <span className="signal-arrow" aria-hidden="true"><ArrowUpRight /></span>
+            <span>Contame sobre <strong>tu cultivo</strong></span>
+            <ArrowUpRight className="signal-link-arrow" aria-hidden="true" />
           </a>
         </div>
         <div className="signal-foot" aria-hidden="true">

@@ -9,7 +9,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom"],
-          "animation-vendor": ["gsap", "gsap/ScrollTrigger", "motion/react"],
+          "animation-vendor": ["gsap", "gsap/ScrollTrigger"],
         },
       },
     },

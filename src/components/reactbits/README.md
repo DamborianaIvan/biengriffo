@@ -1,18 +1,14 @@
 # React Bits
 
-Código obtenido el 14 de octubre de 2026 desde el repositorio oficial:
-https://github.com/DavidHDev/react-bits
-
-- src/content/Backgrounds/Aurora/Aurora.jsx y Aurora.css
-- src/content/TextAnimations/DecryptedText/DecryptedText.jsx
-- src/content/Animations/FadeContent/FadeContent.jsx
-
+Código del repositorio oficial https://github.com/DavidHDev/react-bits.
 Licencia original: LICENSE.md en esta carpeta.
+
+- Threads.jsx y Threads.css: src/content/Backgrounds/Threads/, obtenido el 14 de octubre de 2026.
+- FadeContent.jsx: src/content/Animations/FadeContent/, obtenido el 14 de octubre de 2026.
 
 Adaptaciones locales:
 - FadeContent acepta `as` para conservar botones nativos en la galería.
-- DecryptedText conserva el texto original en su alternativa para lectores de pantalla.
-- Aurora elimina sus recursos sin forzar pérdida de contexto, para admitir el ciclo de efectos de React StrictMode.
-- Reveal omite las animaciones cuando se solicita movimiento reducido, incluso ante cambios de preferencia durante la sesión.
+- Threads ignora punteros táctiles y movimientos mientras está pausado.
+- Reveal omite los efectos cuando se solicita movimiento reducido, incluso ante cambios de preferencia durante la sesión.
 
-Usar estos componentes como base para nuevos efectos. Motion es una dependencia de DecryptedText; GSAP y ScrollTrigger son dependencias de FadeContent.
+Usar estos componentes como base para nuevos efectos. GSAP y ScrollTrigger son dependencias de FadeContent.
