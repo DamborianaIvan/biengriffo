@@ -1,4 +1,4 @@
-/* Portada tipográfica: React Bits Aurora + DecryptedText. */
+/* Portada asimétrica con texto estable y React Bits Threads. */
 .signal-hero {
   position: relative;
   isolation: isolate;
@@ -13,14 +13,14 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 70% 20%, #53268160, transparent 60%),
-    radial-gradient(ellipse at 20% 0%, #c6ff361a, transparent 55%);
+  background: radial-gradient(ellipse at 85% 50%, #25163360, transparent 70%);
 }
 .signal-atmosphere::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #08090c, #08090c22 75%);
+  background: linear-gradient(0deg, #08090c, transparent 65%),
+    linear-gradient(90deg, #08090c70, transparent 80%);
 }
 .signal-content { padding-block: 38px 24px; }
 .signal-topline, .signal-foot {
@@ -37,7 +37,7 @@
   background: #08090c60; border: 1px solid #be83ff60; padding: 8px 12px;
 }
 .signal-pause:hover { border-color: var(--acid); }
-.signal-heading { margin-block: clamp(40px, 6vw, 90px) 48px; }
+.signal-heading { margin-block: clamp(55px, 7vw, 105px) 36px; }
 .signal-hero h1 { margin: 0; max-width: none; font-weight: 800; }
 .signal-pretitle { display: block; font-size: clamp(18px, 2.6vw, 36px); letter-spacing: -.035em; }
 .signal-word {
@@ -46,33 +46,31 @@
   letter-spacing: -.085em;
   line-height: 1.08;
   color: var(--acid);
-  text-shadow: 0 8px 50px #c6ff3620;
+  text-shadow: 0 2px 24px #08090c;
 }
 .signal-subtitle {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 24px;
   align-items: center;
   font-size: clamp(30px, 4.6vw, 65px);
   letter-spacing: -.065em;
   font-weight: 500;
   padding-bottom: 20px;
+  margin-left: 35%;
   border-bottom: 1px solid #be83ff60;
 }
 .signal-subtitle > span { color: var(--violet); font-size: 1.3em; }
 .signal-bottom { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
 .signal-bottom > p { max-width: 430px; color: #c6cec1; font-size: 14px; }
-.signal-consult { display: flex; align-items: center; gap: 24px; padding: 12px 0; font-size: 13px; }
-.signal-consult strong { font-size: clamp(24px, 3vw, 38px); font-weight: 600; letter-spacing: -.04em; }
-.signal-arrow {
-  display: grid; place-items: center;
-  width: 72px; height: 72px;
-  border: 1px solid var(--acid); border-radius: 50%; color: var(--acid);
-  transition: background .25s, color .25s, transform .25s;
+.signal-consult {
+  display: inline-flex; align-items: center; gap: 22px;
+  padding-block: 15px; border-bottom: 1px solid var(--acid);
+  font-size: clamp(18px, 2.1vw, 28px); letter-spacing: -.04em;
 }
-.signal-arrow svg { width: 30px; height: 30px; }
-.signal-consult:hover .signal-arrow, .signal-consult:focus-visible .signal-arrow {
-  background: var(--acid); color: #08090c; transform: rotate(45deg);
-}
+.signal-consult strong { color: var(--acid); font-weight: 600; }
+.signal-link-arrow { width: 34px; height: 34px; flex-shrink: 0; color: var(--acid); transition: transform .25s; }
+.signal-consult:hover .signal-link-arrow, .signal-consult:focus-visible .signal-link-arrow { transform: translate(4px, -4px); }
 .signal-foot { color: #b5a0cc; margin-top: 56px; font-size: 9px; }
 .signal-foot > span:last-child { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 899px) {
@@ -86,12 +84,11 @@
   .signal-heading { margin-block: 65px 28px; }
   .signal-pretitle { font-size: 19px; }
   .signal-word { font-size: 15.4vw; line-height: 1.25; }
-  .signal-subtitle { font-size: 34px; padding-bottom: 16px; }
+  .signal-subtitle { font-size: 30px; padding-bottom: 16px; margin-left: 12%; gap: 16px; }
   .signal-bottom { flex-direction: column; align-items: stretch; gap: 22px; }
   .signal-bottom > p { max-width: 330px; font-size: 13px; }
   .signal-consult { justify-content: space-between; }
-  .signal-consult strong { font-size: 30px; }
-  .signal-arrow { width: 58px; height: 58px; }
+  .signal-consult { font-size: clamp(17px, 4.8vw, 24px); gap: 12px; }
   .signal-foot { margin-top: 34px; font-size: 8px; }
   .signal-foot > span:first-child { max-width: 160px; }
 }
