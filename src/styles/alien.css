@@ -268,8 +268,27 @@
   color: #aab7b0;
 }
 .alien-site .contact {
-  background: #171020;
+  background-color: #171020;
+  background-image:
+    linear-gradient(90deg, #171020dc, #08090ce8),
+    url('/images/hero.webp');
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-top: 1px solid #be83ff40;
+}
+@media (max-width: 650px) {
+  .alien-site .contact {
+    background-image:
+      linear-gradient(180deg, #171020d9, #08090cf2),
+      url('/images/hero-mobile.webp');
+    background-position: 35% top;
+  }
+}
+.contact-background-credit {
+  margin-top: 24px;
+  font-size: 10px;
+  color: #c6cec1;
 }
 .alien-site .contact h2 em {
   font: inherit;
