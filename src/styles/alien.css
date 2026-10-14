@@ -124,8 +124,29 @@
   outline-color: var(--acid);
 }
 .alien-site .about {
-  background: #101017;
+  background-color: #101017;
+  background-image:
+    linear-gradient(90deg, #08090c88, #08090ce8),
+    url('/images/hero-mobile.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-block: 1px solid #be83ff25;
+}
+/* Fondo anclado al viewport, visible únicamente dentro de Sobre mí.
+   En táctiles y con movimiento reducido se conserva como fondo estático. */
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .alien-site .about {
+    background-image:
+      linear-gradient(90deg, #08090c88, #08090ce8),
+      url('/images/hero.webp');
+    background-attachment: fixed;
+  }
+}
+.about-background-credit {
+  margin-top: 32px;
+  font-size: 10px;
+  color: #c6cec1;
 }
 .alien-site .about-grid {
   grid-template-columns: 0.85fr 1.15fr;

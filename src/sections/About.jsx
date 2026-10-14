@@ -66,6 +66,9 @@ export default function About() {
           <a href="#contacto" className="text-link">
             Hacer una consulta <ArrowUpRight size={18} aria-hidden="true" />
           </a>
+          <p className="about-background-credit">
+            Fondo ilustrativo · Jave Lr / Pexels. No representa un trabajo de Biengriffo.
+          </p>
         </Reveal>
       </div>
     </section>
