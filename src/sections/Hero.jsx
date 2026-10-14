@@ -1,133 +1,54 @@
-import {
-  motion,
-  useReducedMotion,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { site } from "../data/site";
+import { lazy, Suspense, useState } from 'react';
+import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
+import DecryptedText from '../components/reactbits/DecryptedText';
+import Reveal from '../components/ui/Reveal';
+import useReducedMotion from '../hooks/useReducedMotion';
+import '../styles/hero.css';
+
+const Aurora = lazy(() => import('../components/reactbits/Aurora'));
 
 export default function Hero() {
   const reduced = useReducedMotion();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const driftX = useSpring(x, { stiffness: 90, damping: 24 });
-  const driftY = useSpring(y, { stiffness: 90, damping: 24 });
-  const reset = () => {
-    x.set(0);
-    y.set(0);
-  };
-  const follow = (event) => {
-    if (reduced || event.pointerType !== "mouse") return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    x.set(((event.clientX - rect.left) / rect.width - 0.5) * 24);
-    y.set(((event.clientY - rect.top) / rect.height - 0.5) * 18);
-  };
+  const [paused, setPaused] = useState(false);
   return (
-    <section
-      id="inicio"
-      className="alien-hero"
-      aria-labelledby="hero-title"
-      onPointerMove={follow}
-      onPointerLeave={reset}
-    >
-      <div className="alien-landscape">
-        <picture>
-          <source media="(max-width: 600px)" srcSet={site.hero.mobile} />
-          <img
-            src={site.hero.src}
-            alt={site.hero.alt}
-            width="1800"
-            height="1422"
-            fetchPriority="high"
-          />
-        </picture>
+    <section id="inicio" className="signal-hero" aria-labelledby="hero-title">
+      <div className="signal-atmosphere" aria-hidden="true">
+        {!reduced && <Suspense fallback={null}>
+          <Aurora colorStops={['#be83ff', '#c6ff36', '#6530cc']} amplitude={1.2}
+            paused={paused} height={0.62} blend={0.65} layers={2} speed={0.6} dpr={1} />
+        </Suspense>}
       </div>
-      <div className="alien-mesh" aria-hidden="true" />
-      <motion.div
-        className="alien-organism"
-        aria-hidden="true"
-        style={{ x: reduced ? 0 : driftX, y: reduced ? 0 : driftY }}
-      >
-        <svg viewBox="0 0 600 600" fill="none">
-          <defs>
-            <radialGradient id="alien-glow">
-              <stop stopColor="#cbff34" stopOpacity=".25" />
-              <stop offset="1" stopColor="#be79ff" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          <ellipse
-            cx="300"
-            cy="300"
-            rx="260"
-            ry="265"
-            fill="url(#alien-glow)"
-          />
-          {Array.from({ length: 9 }, (_, i) => (
-            <ellipse
-              key={i}
-              cx="300"
-              cy="300"
-              rx={225 - i * 9}
-              ry={100 + i * 17}
-              transform={`rotate(${i * 19} 300 300)`}
-              stroke={i % 3 === 0 ? "#bc83ff" : "#c6ff36"}
-              strokeOpacity={0.25 + i * 0.06}
-              strokeWidth="1"
-            />
-          ))}
-          <path
-            d="M203 249Q249 229 278 289Q229 310 203 249ZM397 249Q351 229 322 289Q371 310 397 249Z"
-            fill="#c6ff36"
-          />
-          <path d="M282 338Q300 350 318 338" stroke="#c6ff36" strokeWidth="3" />
-        </svg>
-      </motion.div>
-      <div className="container alien-hero-content">
-        <p className="alien-coordinate">
-          BIENGRIFFO · ASESORAMIENTO TÉCNICO <span aria-hidden="true">✳</span>
-        </p>
-        <motion.h1
-          id="hero-title"
-          initial={reduced ? false : { opacity: 0, y: 35, skewX: -8 }}
-          animate={{ opacity: 1, y: 0, skewX: 0 }}
-          transition={{
-            duration: reduced ? 0 : 0.85,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          Asesoramiento
-          <br />
-          en cultivo de
-          <br />
-          <span>cannabis.</span>
-        </motion.h1>
-        <div className="alien-hero-bottom">
-          <div>
-            <p>
-              Contame sobre tu cultivo y qué necesitás consultar.
-              <br />
-              Evaluamos tu caso y el alcance del asesoramiento.
-            </p>
-            <div className="alien-actions">
-              <a href="#contacto" className="button button--primary">
-                Consultar por asesoramiento{" "}
-                <ArrowUpRight size={19} aria-hidden="true" />
-              </a>
-              <a href="#trabajos" className="text-link">
-                Ver trabajos <ArrowDown size={18} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <span className="alien-side-note">
-            CONSULTAS TÉCNICAS.
-            <br />
-            ATENCIÓN PERSONALIZADA.
-          </span>
+      <div className="container signal-content">
+        <div className="signal-topline">
+          <span>BIENGRIFFO / ASESORAMIENTO TÉCNICO</span>
+          {!reduced && <button type="button" className="signal-pause" onClick={() => setPaused(!paused)}
+            aria-label={paused ? 'Reanudar animación de fondo' : 'Pausar animación de fondo'}>
+            {paused ? <Play size={12} aria-hidden="true" /> : <Pause size={12} aria-hidden="true" />}
+            {paused ? 'REANUDAR EFECTO' : 'PAUSAR EFECTO'}
+          </button>}
         </div>
-        <p className="alien-credit">
-          Fotografía ilustrativa · Jave Lr / Pexels
-        </p>
+        <Reveal className="signal-heading">
+          <h1 id="hero-title" aria-label="Asesoramiento en cultivo de cannabis">
+            <span className="signal-pretitle">Asesoramiento en</span>
+            <span className="signal-word" aria-label="cultivo">
+              {reduced ? 'CULTIVO' : <DecryptedText text="CULTIVO" animateOn="view" speed={65}
+                maxIterations={12} characters="CULTIVO/+#" aria-hidden="true" />}
+            </span>
+            <span className="signal-subtitle">de cannabis<span aria-hidden="true">↗</span></span>
+          </h1>
+        </Reveal>
+        <div className="signal-bottom">
+          <p>Contame sobre tu cultivo y qué necesitás consultar.
+            Evaluamos tu caso y el alcance del asesoramiento.</p>
+          <a href="#contacto" className="signal-consult">
+            <span>Hablemos de<br /><strong>tu cultivo.</strong></span>
+            <span className="signal-arrow" aria-hidden="true"><ArrowUpRight /></span>
+          </a>
+        </div>
+        <div className="signal-foot" aria-hidden="true">
+          <span>CONSULTAS TÉCNICAS / SEGUIMIENTO</span>
+          <span>SEGUÍ EXPLORANDO <ArrowDown size={15} /></span>
+        </div>
       </div>
     </section>
   );

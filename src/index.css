@@ -591,7 +591,7 @@ h2 {
   color: #aab7b0;
   white-space: nowrap;
 }
-/* Motion anima el contenedor; la ficha interna mantiene su inclinación. */
+/* Las entradas de la galería usan React Bits FadeContent. */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1.08fr 1fr;
@@ -792,7 +792,7 @@ h2 {
   color: #a3e635;
   margin-left: 18px;
 }
-.lightbox-shell > img {
+.lightbox-image img {
   width: 100%;
   height: min(65dvh, 680px);
   object-fit: contain;
@@ -1398,7 +1398,7 @@ a.contact-channel:hover {
   .lightbox-controls .icon-button {
     width: 44px;
   }
-  .lightbox-shell > img {
+  .lightbox-image img {
     height: min(58dvh, 600px);
   }
   .whatsapp-float {

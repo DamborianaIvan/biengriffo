@@ -1,10 +1,9 @@
 import { useEffect, useRef } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import Reveal from "../ui/Reveal";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Lightbox({ items, selectedId, onSelect, onClose }) {
   const dialogRef = useRef(null);
-  const reduced = useReducedMotion();
   const index = items.findIndex((item) => item.id === selectedId);
   const item = items[index];
   useEffect(() => {
@@ -64,16 +63,12 @@ export default function Lightbox({ items, selectedId, onSelect, onClose }) {
             <X />
           </button>
         </div>
-        <motion.img
-          key={item.id}
+        <Reveal key={item.id} className="lightbox-image"><img
           src={item.src}
           alt={item.alt}
           width={item.width}
           height={item.height}
-          initial={reduced ? false : { opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: reduced ? 0 : 0.2 }}
-        />
+        /></Reveal>
         <div className="lightbox-bottom">
           <div aria-live="polite" aria-atomic="true">
             <h3 id="lightbox-title">{item.title}</h3>

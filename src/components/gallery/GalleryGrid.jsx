@@ -1,24 +1,16 @@
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Reveal from "../ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
 export default function GalleryGrid({ items, onOpen }) {
-  const reduced = useReducedMotion();
   return (
-    <motion.div
-      layout={!reduced}
+    <div
       className={`gallery-grid ${items.length === 1 ? "gallery-grid--single" : ""}`}
     >
-      <AnimatePresence mode="popLayout">
         {items.map((item) => (
-          <motion.button
+          <Reveal as="button"
             key={item.id}
-            layout={!reduced}
             type="button"
             className={`gallery-item ${item.shape}`}
-            initial={reduced ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: reduced ? 0 : -12 }}
-            transition={{ duration: reduced ? 0 : 0.35 }}
             onClick={() => onOpen(item.id)}
             aria-label={`Ampliar: ${item.title}${item.placeholder ? " (imagen de muestra)" : ""}`}
           >
@@ -53,9 +45,8 @@ export default function GalleryGrid({ items, onOpen }) {
                 <ArrowUpRight size={23} aria-hidden="true" />
               </span>
             </span>
-          </motion.button>
+          </Reveal>
         ))}
-      </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
